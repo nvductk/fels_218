@@ -1,0 +1,50 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+$gray-medium-light: #eaeaea;
+body{
+  font-family: FreeSans;
+  text-align: center;
+  padding-top: 60px;
+}
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $gray-medium-light;
+  color: $gray-light;
+}
+
+h1{
+  color: darkseagreen;
+  font-weight: bold;
+}
+
+#menu{
+  #logo{
+    padding-top: 4px;
+    margin-right: 15px;
+  }
+  li {
+    a:hover {
+      background-color: darkseagreen;
+      color:#fff;
+      transition: all 0.4s ease-in-out;
+    }
+  }
+  .active{
+    a{
+      background-color: darkseagreen;
+      color:#fff;
+    }
+  }
+}
+
+@media(max-width: 767px){
+  #menu{
+    #logo{
+      margin: 0 0 0 45px;
+    }
+  }
+}

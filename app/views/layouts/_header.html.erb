@@ -1,0 +1,29 @@
+<nav class="navbar navbar-fixed-top navbar-default" id="menu">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to image_tag("logo_framgia.png", id: "logo"), root_path %>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="<%= active_class root_path %>"><a href="<%= root_path %>">
+          <i class="fa fa-home fa-lg"></i> <%= t "home" %></a>
+        </li>
+        <li class="<%= active_class help_path %>"><a href="<%= help_path %>">
+          <i class="fa fa-heartbeat fa-lg"></i> <%= t "help" %></a>
+        </li>
+        <li class="<%= active_class about_path %>"><a href="<%= about_path %>">
+          <i class="fa fa-group fa-lg"></i> <%= t "about" %></a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><i class="fa fa-user fa-lg"></i> <%= t "sign_up" %></a></li>
+        <li><a href="#"><i class="fa fa-sign-in fa-lg"></i> <%= t "login" %></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -39,3 +39,29 @@ en:
     about:
       title: "About"
       content: "This is the static about page of Framgia E-learning System"
+  users:
+    new:
+      create_my_account: "Create my account"
+      title: "Sign up"
+    create:
+      error: "error"
+      success: "Welcome to the E-learning"
+  shared:
+    error_messages:
+      error: "error"
+      the_form: "The form contains"
+  sessions:
+    new:
+      log_in: "Log in"
+      remember: "Remember me on this computer"
+      sign_up: "Sign up"
+      new_user: "New user"
+    create:
+      danger: "Invalid email/password combination"
+  layouts:
+    header:
+      profile: "Profile"
+      settings: "Settings"
+      log_out: "Log out"
+      user: " Member"
+      account: "Account"

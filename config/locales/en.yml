@@ -29,6 +29,8 @@ en:
   sign_up: "Sign up"
   login: "Login"
   footer: "Framgia E-Learning by Long D.H. & Duc N.V."
+  lang_en: "English"
+  lang_vn: "Vietnamese"
   static_pages:
     home:
       title: "Home"
@@ -56,6 +58,7 @@ en:
       remember: "Remember me on this computer"
       sign_up: "Sign up"
       new_user: "New user"
+      forgot: "Forgot password?"
     create:
       danger: "Invalid email/password combination"
   layouts:
@@ -63,5 +66,17 @@ en:
       profile: "Profile"
       settings: "Settings"
       log_out: "Log out"
-      user: " Member"
+      users: " Users"
       account: "Account"
+  activerecord:
+    attributes:
+      user:
+        name: "Your name"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        email: "Your Email Address"
+  helpers:
+    label:
+      session:
+        email: "Your Email Address"
+        password: "Password"

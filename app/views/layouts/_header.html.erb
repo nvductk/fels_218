@@ -1,5 +1,7 @@
 <nav class="navbar navbar-fixed-top navbar-default" id="menu">
   <div class="container-fluid">
+  </div>
+  <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
@@ -22,12 +24,12 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
-          <li>
-            <%= link_to t(".user"), users_path, class: "fa fa-user fa-lg" %>
+          <li class="<%= active_class users_path %>"><a href="<%= users_path %>">
+            <i class="fa fa-list-alt  fa-lg"></i> <%= t ".users" %></a>
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <i class="fa fa-cog fa-lg">  <%= t".account" %></i> <b class="caret"></b>
+              <i class="fa fa-cog fa-lg"></i> <%= t".account" %> <i class="fa fa-chevron-down"></i>
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to t(".profile"), current_user %></li>
@@ -37,9 +39,26 @@
             </ul>
           </li>
         <% else %>
-          <li><%= link_to t("sign_up"), signup_path, class: "fa fa-user-plus fa-lg" %></li>
-          <li><%= link_to t("login"), login_path, class: "fa fa-sign-in fa-lg" %></li>
+          <li class="<%= active_class signup_path %>"><a href="<%= signup_path %>">
+            <i class="fa fa-user-plus fa-lg"></i> <%= t "sign_up" %></a>
+          </li>
+          <li class="<%= active_class login_path %>"><a href="<%= login_path %>">
+            <i class="fa fa-sign-in fa-lg"></i> <%= t "login" %></a>
+          </li>
         <% end %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-globe fa-lg"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="<%= active_class_locale :en %>">
+              <%= link_to_unless I18n.locale == :en, t("lang_en"), locale: :en %>
+            </li>
+            <li class="<%= active_class_locale :vn %>">
+              <%= link_to_unless I18n.locale == :vn, t("lang_vn"), locale: :vn %>
+            </li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>

@@ -1,0 +1,82 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+vn:
+  hello: "Xin chào thế giới"
+  head: "Framgia E-learning xin kính chào quý bạn và các vị"
+  title: "Framgia E-learning System"
+  home: "Trang chủ"
+  help: "Trợ giúp"
+  about: "Về Framgia"
+  sign_up: "Đăng ký"
+  login: "Đăng nhập"
+  footer: "Framgia E-Learning by Long D.H. & Duc N.V."
+  lang_en: "Tiếng Anh"
+  lang_vn: "Tiếng Việt"
+  static_pages:
+    home:
+      title: "Trang chủ"
+      content: "Đây là trang chủ của Framgia E-learning System"
+    help:
+      title: "Trợ giúp"
+      content: "Đây là trợ giúp của Framgia E-learning System"
+    about:
+      title: "Về Framgia"
+      content: "Đây là trang thông tin của Framgia E-learning System"
+  users:
+    new:
+      create_my_account: "Đăng ký tài khoản"
+      title: "Đăng ký"
+    create:
+      error: "lỗi"
+      success: "Chào mừng đến với hệ thông đào tạo tiếng Anh của Framgia"
+  shared:
+    error_messages:
+      error: "lỗi"
+      the_form: "Form vừa gửi có"
+  sessions:
+    new:
+      log_in: "Đăng nhập"
+      remember: "Luôn đăng nhập"
+      sign_up: "Đăng ký"
+      new_user: "Tài khoản mới"
+      forgot: "Quên mật khẩu?"
+    create:
+      danger: "Email hoặc mật khẩu không đúng"
+  layouts:
+    header:
+      profile: "Hồ sơ"
+      settings: "Cài đặt"
+      log_out: "Đăng xuất"
+      users: "Danh sách thành viên"
+      account: "Tài khoản"
+  activerecord:
+    attributes:
+      user:
+        name: "Họ và tên"
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
+        email: "Địa chỉ email"
+  helpers:
+    label:
+      session:
+        email: "Địa chỉ email"
+        password: "Mật khẩu"

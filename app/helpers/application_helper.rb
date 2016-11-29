@@ -11,4 +11,8 @@ module ApplicationHelper
   def active_class link_path
     current_page?(link_path) ? "active" : ""
   end
+
+  def active_class_locale locale
+    locale == I18n.locale ? "active" : ""
+  end
 end

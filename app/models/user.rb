@@ -14,9 +14,10 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
   has_secure_password
+  validate :verify_current_password, on: :update
   validates :password, presence: true, length: {minimum: 6}, allow_nil: true
-
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :current_password
+  mount_uploader :avatar, PictureUploader
 
   class << self
     def digest string
@@ -43,9 +44,22 @@ class User < ApplicationRecord
     update_attributes remember_digest: nil
   end
 
+  def avatar_path
+    self.avatar? ? self.avatar.url : Settings.avatar_default
+  end
+
+  def current_user? current_user
+    self == current_user
+  end
+
   private
   def downcase_email
     self.email = email.downcase
   end
 
+  def verify_current_password
+    unless User.find(id).authenticate current_password
+      errors.add :current_password, I18n.t(".incorrect")
+    end
+  end
 end

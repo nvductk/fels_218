@@ -1,0 +1,27 @@
+<% provide :title, @user.name %>
+<div class="col-md-5">
+  <div class="panel panel-default sidebar-menu">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        <span><%= t".header_profile" %></span>
+        <% if @user.current_user?(current_user) %>
+          <span class="header"><%= link_to t(".edit"), edit_user_path %></span>
+        <% end %>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <%= avatar_for @user, size: Settings.avatar_large_size %>
+      <div class="user_name"><%= link_to @user.name, @user %></div>
+      <div>
+        <i class="fa fa-envelope-o"></i>
+        <%= @user.email %>
+      </div>
+      <div>
+        <i class="fa fa-clock-o"></i>
+        <%= t".join_at" %> <%= l @user.created_at, format: :date_format %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-7">
+</div>

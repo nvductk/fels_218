@@ -45,3 +45,4 @@ bower.json
 .idea/
 /test/
 /config/database.yml
+/public/uploads/

@@ -5,7 +5,21 @@
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
-
+.header {
+  float: right;
+}
+.btn_change_ava {
+  position: relative;
+  height: 50px;
+  input {
+    position: absolute;
+    bottom: 0;
+    border: none;
+  }
+}
+.user_name {
+  font-size: 20px;
+}
 h1 {
   font-size: 3em;
   letter-spacing: -2px;

@@ -31,6 +31,10 @@ en:
   footer: "Framgia E-Learning by Long D.H. & Duc N.V."
   lang_en: "English"
   lang_vn: "Vietnamese"
+  incorrect: "incorrect"
+  time:
+    formats:
+      date_format: "%d - %m - %Y"
   static_pages:
     home:
       title: "Home"
@@ -48,6 +52,17 @@ en:
     create:
       error: "error"
       success: "Welcome to the E-learning"
+    edit:
+      save: "Save"
+      edit_user: "Edit user"
+      update: "Update"
+    update:
+      profile: "Updated information and setting successfully!"
+    show:
+      join_at: "Join at"
+      header_profile: "Profile"
+      please_log_in: "Please log in"
+      edit : "Edit"
   shared:
     error_messages:
       error: "error"

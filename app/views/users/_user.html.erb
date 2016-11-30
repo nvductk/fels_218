@@ -1,0 +1,10 @@
+<li>
+  <%= link_to user do %>
+    <%= avatar_for user, size: Settings.avatar_large_size %>
+  <% end %>
+  <h4><%= link_to user.name, user %></h4>
+  <span>
+    <%= t".join_on" %>
+    <%= l user.created_at, format: :date_format %>
+  </span>
+</li>

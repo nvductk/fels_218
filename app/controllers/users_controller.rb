@@ -5,6 +5,11 @@ class UsersController < ApplicationController
     load_user
   end
 
+  def index
+    @users = User.search(params[:q])
+      .paginate page: params[:page], per_page: Settings.page
+  end
+
   def new
     @user = User.new
   end

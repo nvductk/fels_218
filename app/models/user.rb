@@ -29,6 +29,10 @@ class User < ApplicationRecord
     def new_token
       SecureRandom.urlsafe_base64
     end
+
+    def search q
+      where "name LIKE ? OR email LIKE ?", "%#{q}%", "%#{q}%"
+    end
   end
 
   def remember

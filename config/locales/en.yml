@@ -63,10 +63,18 @@ en:
       header_profile: "Profile"
       please_log_in: "Please log in"
       edit : "Edit"
+    user:
+      join_on: "Join on "
+    index:
+      all: "List user"
+      header: "List user"
   shared:
     error_messages:
       error: "error"
       the_form: "The form contains"
+    search_form:
+      holder: "Search"
+      btn_submit: "Search"
   sessions:
     new:
       log_in: "Log in"

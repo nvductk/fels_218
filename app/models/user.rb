@@ -14,10 +14,13 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
   has_secure_password
-  validate :verify_current_password, on: :update
+  validate :verify_current_password, on: :update, unless: :skip_verify_current_password
   validates :password, presence: true, length: {minimum: 6}, allow_nil: true
-  attr_accessor :remember_token, :current_password
+  attr_accessor :remember_token, :current_password, :activation_token, :reset_token,
+    :skip_verify_current_password
   mount_uploader :avatar, PictureUploader
+  before_save :downcase_email
+  before_create :create_activation_digest
 
   class << self
     def digest string
@@ -31,17 +34,13 @@ class User < ApplicationRecord
     end
 
     def search q
-      where "name LIKE ? OR email LIKE ?", "%#{q}%", "%#{q}%"
+      where "name LIKE ? OR email LIKE ? AND activated = ?", "%#{q}%", "%#{q}%", true
     end
   end
 
   def remember
     self.remember_token = User.new_token
     update_attributes remember_digest: User.digest(remember_token)
-  end
-
-  def authenticated?(remember_token)
-    BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
 
   def forget
@@ -56,14 +55,46 @@ class User < ApplicationRecord
     self == current_user
   end
 
-  private
-  def downcase_email
-    self.email = email.downcase
+  def authenticated? attribute, token
+    digest = send "#{attribute}_digest"
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password? token
+  end
+
+  def activate
+    self.update_columns activated: true, activated_at: Time.zone.now
+  end
+
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
+
+  def create_reset_digest
+    self.reset_token = User.new_token
+    update_columns reset_digest: User.digest(reset_token), reset_sent_at: Time.zone.now
+  end
+
+  def send_password_reset_email
+    UserMailer.password_reset(self).deliver_now
+  end
+
+  def password_reset_expired?
+    reset_sent_at < 2.hours.ago
   end
 
   def verify_current_password
     unless User.find(id).authenticate current_password
       errors.add :current_password, I18n.t(".incorrect")
     end
+  end
+
+  private
+  def downcase_email
+    self.email = email.downcase
+  end
+
+  def create_activation_digest
+    self.activation_token  = User.new_token
+    self.activation_digest = User.digest activation_token
   end
 end

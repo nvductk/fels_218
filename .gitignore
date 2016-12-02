@@ -46,3 +46,4 @@ bower.json
 /test/
 /config/database.yml
 /public/uploads/
+config/environment_variables.yml

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161124061006) do
+ActiveRecord::Schema.define(version: 20161202051014) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "target_id"
@@ -74,8 +74,13 @@ ActiveRecord::Schema.define(version: 20161124061006) do
     t.string   "remember_digest"
     t.string   "avatar"
     t.boolean  "is_admin"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.string   "activation_digest"
+    t.boolean  "activated",         default: false
+    t.datetime "activated_at"
+    t.string   "reset_digest"
+    t.datetime "reset_sent_at"
   end
 
   create_table "words", force: :cascade do |t|

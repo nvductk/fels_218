@@ -20,7 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: "Hello"
   head: "Welcome to Framgia E-learning System"
   title: "Framgia E-learning System"
   home: "Home"
@@ -32,9 +32,13 @@ en:
   lang_en: "English"
   lang_vn: "Vietnamese"
   incorrect: "incorrect"
+  click_activate: "Click on the link below to activate your account"
+  activate: "activate"
+  account: "Account activation"
+  password_reset: "Password reset"
   time:
     formats:
-      date_format: "%d - %m - %Y"
+      date_format: "%m - %d - %Y"
   static_pages:
     home:
       title: "Home"
@@ -52,6 +56,7 @@ en:
     create:
       error: "error"
       success: "Welcome to the E-learning"
+      info: "Please check your email to activate your account."
     edit:
       save: "Save"
       edit_user: "Edit user"
@@ -63,11 +68,22 @@ en:
       header_profile: "Profile"
       please_log_in: "Please log in"
       edit : "Edit"
+    account_activation:
+      activated: "Account activated"
+      activation_failed: "Account activated failed"
+      not_activate: "Account not activated. Check your email for the activation link"
+    password_reset:
+      to_reset: "To reset your password click the link below: "
+      expire: "This link will expire in two hours."
+      ignore: "If you did not request your password to be reset, please ignore this email and
+               your password will stay as it is."
+      check_expiration: "Password reset code has expired"
     user:
       join_on: "Join on "
     index:
       all: "List user"
       header: "List user"
+      please_log_in: "Please login to access the content"
   shared:
     error_messages:
       error: "error"
@@ -91,6 +107,18 @@ en:
       log_out: "Log out"
       users: " Users"
       account: "Account"
+  password_resets:
+    new:
+      title: "Password recovery"
+      submit: "Submit"
+      placeholder: "Enter your email to recover the password"
+      sent: "Email sent with password reset instructions"
+      not_found: "Email not found"
+    edit:
+      confirmation: "Confirmation"
+      update: "Update password"
+    errors: " can't be empty"
+    success: "Password has been reset"
   activerecord:
     attributes:
       user:

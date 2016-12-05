@@ -20,7 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 vn:
-  hello: "Xin chào thế giới"
+  hello: "Kính chào "
   head: "Framgia E-learning xin kính chào quý bạn và các vị"
   title: "Framgia E-learning System"
   home: "Trang chủ"
@@ -31,6 +31,14 @@ vn:
   footer: "Framgia E-Learning by Long D.H. & Duc N.V."
   lang_en: "Tiếng Anh"
   lang_vn: "Tiếng Việt"
+  incorrect: "không chính xác"
+  click_activate: "Vui lòng truy cập vào link dưới để kích hoạt tài khoản"
+  Activate: "kích hoạt"
+  account: "Kích hoạt tài khoản"
+  password_reset: "Phục hồi mật khẩu"
+  time:
+    formats:
+      date_format: "%d - %m - %Y"
   static_pages:
     home:
       title: "Trang chủ"
@@ -48,10 +56,41 @@ vn:
     create:
       error: "lỗi"
       success: "Chào mừng đến với hệ thông đào tạo tiếng Anh của Framgia"
+      info: "Chúng tôi đã gửi thư đến email của bạn. Vui lòng kiểm tra email để hoàn thành việc đăng ký"
+    edit:
+      save: "Lưu thông tin"
+      edit_user: "Chỉnh sửa thông tin"
+      update: "Cập nhật"
+    update:
+      profile: "Cập nhật thành công"
+    show:
+      join_at: "Tham gia ngày"
+      header_profile: "Thông tin cá nhân"
+      please_log_in: "Bạn chưa đăng nhập"
+      edit : "Chỉnh sửa"
+    account_activation:
+      activated: "Tài khoản kích hoạt thành công"
+      activation_failed: "Tài khoản kích hoạt không thành công"
+      not_activate: "Tài khoản chưa được kích hoạt.
+                     Vui lòng kiểm tra email để lấy link kích hoạt"
+    password_reset:
+      to_reset: "Để phục hồi mật khẩu hãy click vào link dưới: "
+      expire: "Liên kết này sẽ tồn tại trong vòng 2 giờ."
+      ignore: "Nếu bạn không gửi yêu cầu phục hồi mật khẩu, vui lòng bỏ qua email này."
+      check_expiration: "Password reset code has expired"
+    user:
+      join_on: "Tham gia ngày "
+    index:
+      all: "Danh sách người dùng"
+      header: "Danh sách thành viên"
+      please_log_in: "Vui lòng đăng nhập"
   shared:
     error_messages:
       error: "lỗi"
       the_form: "Form vừa gửi có"
+    search_form:
+      holder: "Tìm kiếm"
+      btn_submit: "Tìm kiếm"
   sessions:
     new:
       log_in: "Đăng nhập"
@@ -68,6 +107,18 @@ vn:
       log_out: "Đăng xuất"
       users: "Danh sách thành viên"
       account: "Tài khoản"
+  password_resets:
+    new:
+      title: "Phục hồi mật khẩu"
+      submit: "Gửi"
+      placeholder: "Điền email để phục hồi mật khẩu"
+      sent: "Đã gửi hướng dẫn phục hồi mật khẩu qua email. Vui lòng kiểm tra"
+      not_found: "Email không tồn tại"
+    edit:
+      confirmation: "Xác nhận mật khẩu"
+      update: "Cập nhật mật khẩu"
+    errors: " không thể bỏ trống"
+    success: "Cập nhật mật khẩu thành công"
   activerecord:
     attributes:
       user:

@@ -131,3 +131,34 @@ en:
       session:
         email: "Your Email Address"
         password: "Password"
+  admin:
+    users:
+      index:
+        all: "All"
+        number: "Number"
+        name: "Name"
+        email: "Email"
+        join_on: "Join on"
+        option: "Option"
+        status: "Status"
+      destroy:
+        success: "Delete user success"
+        danger: "Delete user failed"
+      user:
+        btn_delete_title: "Delete"
+        btn_edit_title: "Edit"
+        delete_confirmation: "Delete user #%{name}?"
+      edit:
+        save: "Save"
+        lb_permission: "Permission"
+        lb_is_admin: "Administrator"
+        header: "Update"
+    shared:
+      search_form:
+        holder: "Search"
+        btn_submit: "Search"
+    layouts:
+      left_panel:
+        header: "Dashboard"
+  user:
+    admin: "Admin"

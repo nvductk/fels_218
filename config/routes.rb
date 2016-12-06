@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vn/ do
+    namespace :admin do
+      root "users#index"
+      resources :users
+      resources :words
+      resources :categories
+    end
     get "/help", to: "static_pages#help"
     get "/about", to: "static_pages#about"
     get "signup", to: "users#new"

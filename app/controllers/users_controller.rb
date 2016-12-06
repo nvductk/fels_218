@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, except: [:new, :create]
+  before_action :verify_login, except: [:new, :create]
+  before_action :load_user, except: [:index, :new, :create]
 
   def show
-    load_user
   end
 
   def index
@@ -26,11 +26,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    load_user
   end
 
   def update
-    @user = User.find_by id: params[:id]
     if @user.update_attributes user_params
       flash[:success] = t".profile"
       redirect_to @user
@@ -43,10 +41,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit :name, :email, :password,
       :password_confirmation, :current_password, :avatar
-  end
-
-  def load_user
-    @user = User.find_by id: params[:id]
-    render_404 unless @user
   end
 end

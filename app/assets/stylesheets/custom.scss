@@ -5,6 +5,9 @@
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
+.checkbox-margin {
+  margin-left: -130px !important;
+}
 .header {
   float: right;
 }
@@ -70,6 +73,7 @@ footer {
   padding-top: 5px;
   border-top: 1px solid $gray-medium-light;
   color: $gray-light;
+  clear: both;
 }
 
 h1{

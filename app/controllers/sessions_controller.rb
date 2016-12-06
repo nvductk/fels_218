@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         log_in user
         remember user
         params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-        redirect_back_or user
+        user.is_admin? ? redirect_to(admin_root_url) : redirect_back_or(user)
       else
         flash[:warning] = t "users.account_activation.not_activate"
         redirect_to root_url

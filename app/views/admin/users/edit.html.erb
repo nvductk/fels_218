@@ -1,0 +1,39 @@
+<div class="col-md-6">
+  <div class="panel panel-default sidebar-menu">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= t ".header" %></h3>
+    </div>
+    <div class="panel-body">
+      <%= form_for [:admin, @user] do |f| %>
+        <%= render "shared/error_messages", object: f.object %>
+
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control" %>
+
+        <%= f.label :email %>
+        <%= f.email_field :email, class: "form-control" %>
+
+        <%= f.label :current_password %>
+        <%= f.password_field :current_password, class: "form-control" %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password, class: "form-control" %>
+
+        <%= f.label :password_confirmation, t(".confirmation") %>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+
+        <div class="current_ava">
+          <%= avatar_for @user %>
+        </div>
+        <div class="btn_change_ava">
+          <%= f.file_field :avatar, accept: "image/jpeg,image/gif,image/png" %>
+        </div>
+        <%= f.label :is_admin, class: "checkbox inline" do %>
+        <%= f.check_box :is_admin, class: "checkbox-margin" %>
+          <span><%= t(".lb_is_admin") %></span>
+        <% end %>
+        <%= f.submit t(".save"), class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

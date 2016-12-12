@@ -1,9 +1,13 @@
 <% provide :title, t(".all") %>
 <div class="col-md-9 col-sm-12">
-  <%= form_tag admin_users_path, method: :get, id: "search",
-    class: "row" do %>
-    <%= render "admin/shared/search_form" %>
-  <% end %>
+  <div class="row">
+    <div class="col-md-10 form-group">
+      <%= form_tag admin_users_path, method: :get, id: "search",
+        class: "form-inline" do %>
+        <%= render "admin/shared/search_form" %>
+      <% end %>
+    </div>
+  </div>
   <table id="users-data-table" class="table table-hover">
     <thead>
       <tr>

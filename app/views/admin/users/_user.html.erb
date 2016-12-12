@@ -7,7 +7,6 @@
       <i class="fa fa-star" style="color:red" title="<%= t"user.admin" %>"></i>
     <% end %>
     <%= link_to user.name, user %>
-
   </td>
   <td><%= user.email %></td>
   <td><%= l user.created_at, format: :date_format %></td>
@@ -22,7 +21,7 @@
         title: t(".btn_delete_title"),
         data: {confirm: t(".delete_confirmation",
         name: user.name)} do %>
-         <i class="fa fa-trash"></i>
+          <i class="fa fa-trash"></i>
         <% end %>
       <% end %>
   </td>

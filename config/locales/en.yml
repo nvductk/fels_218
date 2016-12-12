@@ -160,5 +160,28 @@ en:
     layouts:
       left_panel:
         header: "Dashboard"
+    categories:
+      new:
+        success: "New category added successfully"
+        danger: "Fail to add new category"
+      index:
+        title: "Category"
+        name: "Name"
+        created_at: "Created at"
+        word_count: "Word count"
+        lesson_count: "Lesson count"
+        add: "Add category"
+        add_header: "Add a new category"
+        add_submit: "Add"
+        add_close: "Close"
+        edit_header: "Update category "
+        edit_submit: "Update"
+      update:
+        success: "Update category successfully!"
+        danger: "Fail to update category!"
+      delete:
+        success: "Delete category successfull!"
+        danger: "Fail to delete category!"
+
   user:
     admin: "Admin"

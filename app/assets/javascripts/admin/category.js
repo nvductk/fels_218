@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', function() {
     create_category();
   });
 
-  $('.update').click(function (event) {
+  $('.update-cate').click(function (event) {
     event.preventDefault();
     var id = $(this).attr('id');
     $('#edit-category-modal-' + id).modal();
@@ -14,20 +14,24 @@ $(document).on('turbolinks:load', function() {
     });
   });
 
-  $('.del').click(function (event) {
+  $('.del-cate').click(function (event) {
     event.preventDefault();
     var id = $(this).attr('id');
-    $.ajax({
-      url: '/admin/categories/' + id,
-      method: 'DELETE',
-      success: function(){
-        alert('Delete category successfully!');
-        $('#category-'+id).remove();
-      },
-      error: function () {
-        alert('Fail to delete category!')
-      }
-    });
+    var name = $('#category-'+id).children('td').eq(1).text().trim();
+    if(confirm('Delete category '+name+' ?')){
+      $.ajax({
+        url: '/admin/categories/' + id,
+        method: 'DELETE',
+        success: function(){
+          alert(I18n.t('admin.categories.delete.success'));
+          $('#category-'+id).remove();
+          index_for();
+        },
+        error: function () {
+          alert(I18n.t('admin.categories.delete.danger'));
+        }
+      });
+    }
   });
 
   function create_category() {
@@ -38,7 +42,7 @@ $(document).on('turbolinks:load', function() {
       data: form_data.serialize(),
       dataType: 'html',
       success: function(resp) {
-        alert('Create new category successfully!');
+        alert(I18n.t('admin.categories.new.success'));
         $('#category_name').val('');
         $('#result_search').prepend(resp);
         if(current_elements_in_page() >= PER_PAGE){
@@ -49,7 +53,7 @@ $(document).on('turbolinks:load', function() {
         $('.modal-backdrop').fadeOut();
       },
       error: function () {
-        alert('Fail to create new category!');
+        alert(I18n.t('admin.categories.new.danger'));
       }
     })
   }
@@ -62,14 +66,14 @@ $(document).on('turbolinks:load', function() {
       data: form_data.serialize(),
       dataType: 'html',
       success: function(resp) {
-        alert('Update category successfully!');
+        alert(I18n.t('admin.categories.update.success'));
         $('#result_search').children('#category-'+id).replaceWith(resp);
         index_for();
         $('#edit-category-modal-'+id).slideUp();
         $('.modal-backdrop').fadeOut();
       },
       error: function () {
-        alert('Fail to update category!');
+        alert(I18n.t('admin.categories.update.danger'));
       }
     })
   }

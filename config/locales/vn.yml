@@ -131,3 +131,48 @@ vn:
       session:
         email: "Địa chỉ email"
         password: "Mật khẩu"
+  admin:
+    users:
+      index:
+        all: "Toàn bộ"
+        number: "Số thứ tự"
+        name: "Họ tên"
+        email: "Email"
+        join_on: "Đăng ký ngày"
+        option: "Lựa chọn"
+        status: "Trạng thái"
+      destroy:
+        success: "Xóa tài khoản thành công"
+        danger: "Xóa tài khoản thất bại"
+      user:
+        btn_delete_title: "Xóa"
+        btn_edit_title: "Chỉnh sửa"
+        delete_confirmation: "Bạn có muốn xóa tài khoản này?"
+      edit:
+        save: "Lưu"
+        lb_permission: "Quyền hạn"
+        lb_is_admin: "Quản trị viên"
+        header: "Cập nhật thông tin"
+    shared:
+      search_form:
+        holder: "Tìm kiếm"
+        btn_submit: "Tìm kiếm"
+    layouts:
+      left_panel:
+        header: "Dashboard"
+    categories:
+      new:
+        success: "Thêm mới danh mục thành công"
+        danger: "Thêm mới danh mục thất bại"
+      index:
+        title: "Danh mục"
+        name: "Tên danh mục"
+        created_at: "Ngày tạo"
+        word_count: "Tổng số từ"
+        lesson_count: "Tổng số bài học"
+        add: "Add category"
+        add_header: "Add a new category"
+        add_submit: "Thêm mới"
+        add_close: "Đóng"
+  user:
+    admin: "Admin"

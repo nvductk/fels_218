@@ -15,3 +15,40 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+var PER_PAGE = 5;
+function index_for(){
+  var index = PER_PAGE * (current_page() - 1) + 1;
+  var tr_result = $('#result_search').children('tr');
+  $.each(tr_result,function(id,val){
+    val = $(val);
+    val.children('td').first().html(index);
+    index++;
+  });
+}
+
+function current_elements_in_page() {
+  return $('#result_search').children('tr').length;
+}
+
+$(document).on('turbolinks:load', function() {
+  index_for();
+  console.log(index_for());
+});
+
+function current_page(){
+  if($('.pagination').length){
+    var li_paginate = $('.pagination').children('li');
+    var result;
+    $.each(li_paginate, function(index,value){
+      value = $(value);
+      if(value.hasClass('active')){
+        result = parseInt(value.children('a').first().html(),10);
+        return result;
+      }
+    });
+    return result;
+  } else {
+    return 1;
+  }
+}

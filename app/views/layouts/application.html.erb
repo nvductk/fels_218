@@ -7,7 +7,8 @@
   </head>
   <body>
   <%= render "layouts/header" %>
-  <div class="container" id="main-content">
+  <div class="container" id="main-content" style="<%= "margin: 0;padding: 0;
+    width: 100%" if current_page? root_url %>">
     <% flash.each do |message_type, message| %>
       <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
     <% end %>

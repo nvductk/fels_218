@@ -36,6 +36,16 @@ en:
   activate: "activate"
   account: "Account activation"
   password_reset: "Password reset"
+  answer: "Correct answer"
+  answers: "Answers"
+  zero: " required!"
+  more_than_1: " can't be more than one"
+  duplicated: " duplicated"
+  answer_not_less_2: "Answers cannot less than 2"
+  only_4: "A word has only 4 answers"
+  models:
+    word:
+      error_many_answers: "Cannot have more than one correct answer"
   time:
     formats:
       date_format: "%m - %d - %Y"
@@ -159,7 +169,7 @@ en:
       user:
         btn_delete_title: "Delete"
         btn_edit_title: "Edit"
-        delete_confirmation: "Delete user #%{name}?"
+        delete_confirmation: "Delete user %{name}?"
       edit:
         save: "Save"
         lb_permission: "Permission"
@@ -194,12 +204,38 @@ en:
       delete:
         success: "Delete category successfull!"
         danger: "Fail to delete category!"
-
   categories:
     index:
       title: "Lesson"
     category:
       start: "Start"
+      show:
+        title: "Words list"
+        add_submit: "Add"
+        add: "Add a new word"
+        add_header: "Add a new word for category: "
+        add_close: "Close"
+        content: "Content"
+        header: "Words list for"
+        legend_word: "New word content"
+    words:
+      word:
+        delete_confirmation: "Delete word %{name}?"
+        success: "Create new word successfully!"
+        warning: "Fail to create new word!"
+        edit_header: "Update word"
+        word_content: "Word content"
+        destroy:
+          success: "Delete word successfully!"
+          danger: "Fail to delete word!"
+          btn_delete_title: "Delete"
+          btn_show_answers: "Show answers"
+        update:
+          success: "Update word successfully!"
+          danger: "Fail to update word!"
+      answer_content: "Answer content"
+      is_correct: "Is a correct answer? "
+      remove: "Remove"
   user:
     admin: "Admin"
   lessons:

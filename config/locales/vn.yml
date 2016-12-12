@@ -36,6 +36,19 @@ vn:
   Activate: "kích hoạt"
   account: "Kích hoạt tài khoản"
   password_reset: "Phục hồi mật khẩu"
+  answer: "Đáp án"
+  answers: "Đáp án"
+  zero: " không được bỏ trống!"
+  more_than_1: " không thể nhiều hơn 1"
+  duplicated: " bị trùng"
+  answer_not_less_2: "Đáp án không được ít hơn 2"
+  only_4: "Một từ không có nhiều hơn 4 đáp án"
+  models:
+    word:
+      error_many_answers: "Không thể có nhiều hơn một đáp án đúng"
+  will_paginate:
+    next_label: "Tiếp theo →"
+    previous_label: "← Về trước"
   time:
     formats:
       date_format: "%d - %m - %Y"
@@ -77,7 +90,7 @@ vn:
       to_reset: "Để phục hồi mật khẩu hãy click vào link dưới: "
       expire: "Liên kết này sẽ tồn tại trong vòng 2 giờ."
       ignore: "Nếu bạn không gửi yêu cầu phục hồi mật khẩu, vui lòng bỏ qua email này."
-      check_expiration: "Password reset code has expired"
+      check_expiration: "Mã phục hồi mật khẩu hết hạn"
     user:
       join_on: "Tham gia ngày "
     index:
@@ -171,8 +184,40 @@ vn:
         word_count: "Tổng số từ"
         lesson_count: "Tổng số bài học"
         add: "Add category"
-        add_header: "Add a new category"
+        add_header: "Thêm mới danh mục"
         add_submit: "Thêm mới"
         add_close: "Đóng"
+        edit_header: "Cập nhật danh mục "
+        edit_submit: "Cập nhật"
+      update:
+        success: "Thêm mới danh mục thành công!"
+        danger: "Thêm mới danh mục thất bại!"
+      show:
+        title: "Danh sách từ"
+        add_submit: "Thêm mới"
+        add: "Thêm từ mới"
+        add_header: "Thêm từ mới cho danh mục: "
+        add_close: "Đóng"
+        content: "Nội dung"
+        header: "Danh sách từ thuộc danh mục"
+        legend_word: "Nội dung từ mới"
+    words:
+      word:
+        delete_confirmation: "Bạn có muốn xóa từ %{name}?"
+        success: "Thêm từ mới thành công!"
+        warning: "Thêm từ mới thất bại!"
+        edit_header: "Update word"
+        word_content: "Nội dung từ"
+        destroy:
+          success: "Xóa từ thành công!"
+          danger: "Xóa từ thất bại!"
+          btn_delete_title: "Xóa"
+          btn_show_answers: "Hiển thị đáp án"
+        update:
+          success: "Cập nhật từ thành công!"
+          danger: "Cập nhật từ thất bại!"
+      answer_content: "Nội dung đáp án"
+      is_correct: "Đáp án này là câu trả lời đúng? "
+      remove: "Bỏ"
   user:
     admin: "Admin"

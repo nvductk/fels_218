@@ -1,7 +1,7 @@
 <tr class="text-center" id="category-<%= category.id %>">
   <td></td>
   <td>
-    <%= link_to category.name, category %>
+    <%= link_to category.name, admin_category_path(category) %>
   </td>
   <td>
     <%= category.words.count %>
@@ -9,9 +9,9 @@
   <td><%= l category.created_at, format: :date_format %></td>
   <td>
     <%= link_to "#",
-      class: "update btn btn-warning btn-xs btn-option",
+      class: "update-cate btn btn-warning btn-xs btn-option",
       title: t("admin.users.user.btn_edit_title"), id: category.id do %>
-        <i class="fa fa-edit"></i>
+      <i class="fa fa-edit"></i>
       <% end %>
     <div id="edit-category-modal-<%= category.id %>" class="modal fade" role="form">
       <div class="modal-dialog">
@@ -39,12 +39,10 @@
         </div>
       </div>
     </div>
-    <%= link_to admin_category_path(category.id), method: :delete,
-      class: "del btn btn-danger btn-xs btn-option", id: category.id,
-      title: t("admin.users.user.btn_delete_title"), remote: true,
-      data: {confirm: t("admin.users.user.delete_confirmation",
-      name: category.name)} do %>
-        <i class="fa fa-trash"></i>
+    <%= link_to "#", class: "del-cate btn btn-danger btn-xs btn-option",
+      id: category.id, title: t("admin.users.user.btn_delete_title"),
+      remote: true do %>
+      <i class="fa fa-trash"></i>
       <% end %>
   </td>
 </tr>

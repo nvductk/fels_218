@@ -9,13 +9,18 @@ class Admin::CategoriesController < ApplicationController
     @category = Category.new
   end
 
+  def show
+    @words = @category.words.search_by_content(params[:q]).order_by_creation_time
+      .includes(:answers).paginate page: params[:page], per_page: Settings.admin_page
+    @word = Word.new
+  end
+
   def create
     @category = Category.new category_params
     if @category.save
-      flash[:success] = t "admin.categories.new.success"
       render partial: "category", locals:{category: @category}
     else
-      flash[:danger] = t "admin.categories.new.danger"
+      render partial: "shared/error_messages", locals: {object: @category}
     end
   end
 
@@ -28,6 +33,7 @@ class Admin::CategoriesController < ApplicationController
       render partial: "category", locals:{category: @category}
     else
       flash[:danger] = t "admin.categories.update.danger"
+      render partial: "shared/error_messages", locals: {object: @category}
     end
   end
 

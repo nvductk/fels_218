@@ -20,6 +20,8 @@
         <i class="fa fa-clock-o"></i>
         <%= t".join_at" %> <%= l @user.created_at, format: :date_format %>
       </div>
+      <%= render "users/follow_form" %>
+      <%= render "shared/stats" %>
     </div>
   </div>
 </div>

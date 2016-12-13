@@ -84,6 +84,16 @@ en:
       all: "List user"
       header: "List user"
       please_log_in: "Please login to access the content"
+    unfollow:
+      unfollow: "Unfollow"
+    follow:
+      follow: "Follow"
+    followers:
+      followers: "Followers"
+    following:
+      following: "Following"
+    show_follow:
+      header_follow: "Follow"
   shared:
     error_messages:
       error: "error"

@@ -14,6 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require i18n
+//= require i18n.js
+//= require i18n/translations
 //= require_tree .
 
 var PER_PAGE = 5;
@@ -33,7 +36,6 @@ function current_elements_in_page() {
 
 $(document).on('turbolinks:load', function() {
   index_for();
-  console.log(index_for());
 });
 
 function current_page(){

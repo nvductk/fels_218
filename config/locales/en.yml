@@ -117,6 +117,7 @@ en:
       log_out: "Log out"
       users: " Users"
       account: "Account"
+      categories: "Categories"
   password_resets:
     new:
       title: "Password recovery"
@@ -151,6 +152,7 @@ en:
         join_on: "Join on"
         option: "Option"
         status: "Status"
+        action: "Action"
       destroy:
         success: "Delete user success"
         danger: "Delete user failed"
@@ -193,5 +195,19 @@ en:
         success: "Delete category successfull!"
         danger: "Fail to delete category!"
 
+  categories:
+    index:
+      title: "Lesson"
+    category:
+      start: "Start"
   user:
     admin: "Admin"
+  lessons:
+    load_fails: "Load lesson fails"
+    edit:
+      save_btn: "Submit"
+      lesson: "Edit Lesson"
+      btn_submit: "Submit"
+    create:
+      lesson_created: "Lesson created"
+      lesson_fails: "Lesson create fail"

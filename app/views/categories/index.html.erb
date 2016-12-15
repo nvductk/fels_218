@@ -1,0 +1,24 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <div>
+    <%= form_tag categories_path, method: :get, id: "search",
+      class: "form-inline text-center" do %>
+      <%= render "admin/shared/search_form" %>
+    <% end %>
+  </div>
+  <table id="categories-table" class="table table-hover">
+    <thead>
+      <tr>
+        <th class="text-center"><%= t "admin.users.index.number" %></th>
+        <th class="text-center"><%= t ".name" %></th>
+        <th class="text-center"><%= t ".word_count" %></th>
+        <th class="text-center"><%= t".created_at" %></th>
+        <th class="text-center"><%= t "admin.users.index.action" %></th>
+      </tr>
+    </thead>
+    <tbody id="result_search">
+      <%= render @categories %>
+    </tbody>
+  </table>
+  <%= will_paginate %>
+</div>

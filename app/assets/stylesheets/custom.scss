@@ -7,7 +7,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .checkbox-margin {
-  margin-left: -130px !important;
+  margin-left: 130px !important;
 }
 
 .header {
@@ -55,7 +55,6 @@ p {
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
 }
@@ -160,6 +159,19 @@ h1{
 
 .btn-follow {
   width: 150px;
+}
+.question {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.answers {
+  padding-left: 20px;
+}
+.font-weight-normal {
+  font-weight: normal;
+}
+.btn-nav {
+  padding: 30px 0;
 }
 
 @media(max-width: 767px){

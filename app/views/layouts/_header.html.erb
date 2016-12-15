@@ -24,6 +24,9 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
+          <li class="<%= active_class users_path %>"><a href="<%= categories_path %>">
+            <i class="fa fa-caret-square-o-down fa-lg"></i> <%= t ".categories" %></a>
+          </li>
           <li class="<%= active_class users_path %>"><a href="<%= users_path %>">
             <i class="fa fa-list-alt  fa-lg"></i> <%= t ".users" %></a>
           </li>

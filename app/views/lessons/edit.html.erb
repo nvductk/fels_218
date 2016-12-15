@@ -1,0 +1,32 @@
+<% provide :title, t(".lesson") %>
+<div class="col-md-8 col-md-offset-2">
+  <div class="box">
+    <h2 class="text-center"><%= @lesson.category.name %></h2>
+    <hr>
+    <div class="table-responsive">
+      <%= form_for @lesson do |f| %>
+        <%= f.fields_for :results do |f_result| %>
+          <div class="col-md-12 question well">
+            <strong>
+              <%= f_result.index + 1 %>. <%= f_result.object.word.content %>
+            </strong>
+          </div>
+          <div class="col-md-12 answers">
+            <% f_result.object.word.answers.each do |answer| %>
+              <div class="option">
+                <%= f_result.radio_button :answer_id, answer.id %>
+                <%= answer.content %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+        <div class="col-md-12 text-center btn-nav">
+          <hr>
+          <%= f.button class: "btn btn-success" do %>
+            <i class="fa fa-upload"></i> <%= t(".btn_submit") %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

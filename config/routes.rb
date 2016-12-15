@@ -19,5 +19,7 @@ Rails.application.routes.draw do
     resources :followers, only: :show
     resources :followings, only: :show
     resources :relationships, only: [:create, :destroy]
+    resources :categories, only: :index
+    resources :lessons
   end
 end

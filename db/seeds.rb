@@ -25,7 +25,27 @@ User.create!(name:  "Admin",
     activated_at: Time.zone.now)
 end
 
-99.times do |n|
-  name  = Faker::Pokemon.name
-  Category.create! name: name
+3.times do |n|
+  category_name = "Category-#{n+1}"
+
+  category = Category.create name: category_name
+
+  90.times do |n|
+    word_content = "word-#{n+1}"
+    word = Word.create content: word_content,
+      category_id: category.id
+    3.times do |n|
+      Answer.create content: "answer-#{n+1}",
+        is_correct: 0, word_id: word.id
+    end
+    Answer.create content: "answer-4",
+        is_correct: 1, word_id: word.id
+  end
 end
+
+users = User.all
+user = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each {|followed| user.follow followed}
+followers.each {|follower| follower.follow user}

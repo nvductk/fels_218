@@ -1,0 +1,16 @@
+<tr class="text-center" id="category-<%= category.id %>">
+  <td></td>
+  <td>
+    <%= link_to category.name, category %>
+  </td>
+  <td>
+    <%= category.words.count %>
+  </td>
+  <td><%= l category.created_at, format: :date_format %></td>
+  <td>
+    <%= link_to lessons_path(category_id: category.id),
+      method: :post, class: "btn btn-primary" do %>
+      <i class="fa fa-play"></i>
+    <% end %>
+  </td>
+</tr>

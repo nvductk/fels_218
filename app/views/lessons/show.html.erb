@@ -1,0 +1,38 @@
+<% provide :title, t(".lesson") %>
+<div><%= t".exam_date" %>: <%= l @lesson.created_at, format: :date_time %></div>
+<div>
+  <%= t".exam_result" %>:
+  <span class="show-score">
+    <%= @lesson.number_correct_answer.to_s + " / " + @lesson.results.size.to_s %>
+  </span>
+</div>
+<div class="col-md-10 col-md-offset-1">
+  <div class="box">
+    <h2 class="text-center"><%= @lesson.category.name %></h2>
+    <hr>
+    <div class="table-responsive">
+      <%= form_for @lesson do |f| %>
+        <%= f.fields_for :results do |f_result| %>
+          <div class="col-md-12 question well">
+            <strong>
+              <%= f_result.index + 1 %>. <%= f_result.object.word.content %>
+            </strong>
+          </div>
+          <div class="col-md-12 answers">
+            <% f_result.object.word.answers.each do |answer| %>
+              <div class="option">
+                <%= f_result.radio_button :answer_id, answer.id ,disabled: true%>
+                <%= answer.content %>
+              </div>
+            <% end %>
+            <% if correct_answer f_result.object.answer_id %>
+              <p class="label label-primary"><%= t".correct_answer" %></p>
+            <% else %>
+              <p class="label label-danger"><%= t".wrong_answer" %></p>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

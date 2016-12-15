@@ -9,7 +9,11 @@ class Lesson < ApplicationRecord
   before_create :word_for_lesson
 
   accepts_nested_attributes_for :results,
-    reject_if: proc{|attributes| attributes["content"].blank?}
+    reject_if: proc{|attributes| attributes[:answer_id].blank?}
+
+  def number_correct_answer
+    self.results.correct.count
+  end
 
   private
   def word_for_lesson

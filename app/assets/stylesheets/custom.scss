@@ -34,7 +34,6 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
@@ -201,6 +200,12 @@ h1{
 #alert-error{
   list-style-type: none;
   margin-right: 40px;
+}
+
+.show-score {
+  color: blue;
+  font-weight: bold;
+  font-size: 1.5em;
 }
 
 @media(max-width: 767px){

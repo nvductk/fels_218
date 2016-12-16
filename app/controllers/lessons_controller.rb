@@ -13,6 +13,16 @@ class LessonsController < ApplicationController
     end
   end
 
+  def update
+    if @lesson.update_attributes lesson_params.merge is_finish: true
+      flash[:success] = t".lesson_finish"
+      redirect_to lesson_path @lesson
+    else
+      flash[:danger] = t".lesson_fails"
+      redirect_to categories_path
+    end
+  end
+
   private
   def load_lesson
     @lesson = Lesson.find_by id: params[:id]

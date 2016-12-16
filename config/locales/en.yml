@@ -49,6 +49,7 @@ en:
   time:
     formats:
       date_format: "%m - %d - %Y"
+      date_time: "%d/%m/%Y %H:%M"
   static_pages:
     home:
       title: "Home"
@@ -247,3 +248,12 @@ en:
     create:
       lesson_created: "Lesson created"
       lesson_fails: "Lesson create fail"
+    update:
+      lesson_finish: "Lesson finish"
+    show:
+      lesson: "Lesson"
+      correct: "Correct"
+      exam_date: "Exam date"
+      exam_result: "Exam result"
+      correct_answer: "Correct answer"
+      wrong_answer: "Wrong anser"

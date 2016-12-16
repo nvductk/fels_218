@@ -1,0 +1,10 @@
+<fieldset id="answer-form" class="form-group answer_field">
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.label :content, t("admin.words.answer_content") %>
+  <%= f.text_field :content, class: "form-control" %>
+  <div class="form-inline">
+    <%= f.label :is_correct, t("admin.words.is_correct") %>
+    <%= f.check_box :is_correct, class: "form-control" %>
+    <%= link_to_remove_fields "", f %>
+  </div>
+</fieldset>

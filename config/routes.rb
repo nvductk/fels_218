@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
     root "static_pages#home"
-    resources :users, :categories
+    resources :users, :categories, :words
     resources :account_activations, only: [:edit]
     resources :password_resets, only: [:new, :create, :edit, :update]
     resources :followers, only: :show

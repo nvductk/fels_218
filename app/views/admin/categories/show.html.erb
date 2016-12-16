@@ -1,0 +1,67 @@
+<% provide :title, t("admin.categories.show.title") %>
+<div class="col-md-9 col-sm-12">
+  <h1 class="text-center"><%= t ".header" %> <%= @category.name %></h1>
+  <div class="row">
+    <div class="col-md-9 form-group">
+      <%= form_tag admin_category_path(@category), method: :get, id: "search",
+        class: "form-inline" do %>
+        <%= render "admin/shared/search_form" %>
+      <% end %>
+    </div>
+    <div class="col-md-3 form-group">
+      <button type="button" class="form-control btn-success btnSearch" id="btnAdd"
+        data-toggle="modal" data-target="#new-word-modal"><%= t ".add" %></button>
+      <div id="new-word-modal" class="modal fade" role="form">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" id="close_modal" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title"><%= t ".add_header" %><%= @category.name %></h4>
+            </div>
+            <div class="modal-body">
+              <%= form_for [:admin, @word], remote: true do |f| %>
+                <%= render "shared/error_messages", object: f.object %>
+                <div class="panel panel-body pnl-word">
+                  <legend><%= t ".legend_word" %></legend>
+                  <fieldset>
+                    <%= f.label :content %>
+                    <%= f.text_field :content, class: "form-control" %>
+                    <%= f.hidden_field :category_id, value: @category.id %>
+                  </fieldset>
+                </div>
+                <div class="panel panel-body pnl-word" id="answer-pnl">
+                  <legend><%= t "answers" %> <%= link_to_add_fields "", f, :answers %>
+                  </legend>
+                  <%= f.fields_for :answers, Answer.new do |builder| %>
+                    <%= render "admin/words/answer_fields", f: builder %>
+                  <% end %>
+                </div>
+                <%= f.submit t(".add_submit"), class: "btn btn-primary",
+                  id: "new-word" %>
+              <% end %>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">
+                <%= t ".add_close" %>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <table id="words-table" class="table table-hover">
+    <thead>
+    <tr>
+      <th class="text-center"><%= t "admin.users.index.number" %></th>
+      <th class="text-center"><%= t ".content" %></th>
+      <th class="text-center"><%= t"admin.categories.index.created_at" %></th>
+      <th class="text-center"><%= t "admin.users.index.option" %></th>
+    </tr>
+    </thead>
+    <tbody id="result_search">
+      <%= render @words %>
+    </tbody>
+  </table>
+  <%= will_paginate @words, class: "paginate" %>
+</div>

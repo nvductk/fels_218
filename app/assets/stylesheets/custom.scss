@@ -55,6 +55,7 @@ p {
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   margin-bottom: 15px;
+  width: 100%;
   @include box_sizing;
 }
 
@@ -159,16 +160,20 @@ h1{
 .btn-follow {
   width: 150px;
 }
+
 .question {
   margin-top: 20px;
   margin-bottom: 10px;
 }
+
 .answers {
   padding-left: 20px;
 }
+
 .font-weight-normal {
   font-weight: normal;
 }
+
 .btn-nav {
   padding: 30px 0;
 }
@@ -206,6 +211,58 @@ h1{
   color: blue;
   font-weight: bold;
   font-size: 1.5em;
+}
+
+.paginate{
+  text-align: center;
+}
+
+.pnl-word{
+  border-color: #BBBBBB;
+}
+
+#answer-form{
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+#add-answer{
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+  transition: transform .8s ease-in-out;
+  text-decoration: none;
+}
+
+#add-answer:hover {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  text-decoration: none;
+}
+
+#alert-error{
+  list-style-type: none;
+  margin-right: 40px;
+}
+
+.modal-button{
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.modal-button .btnSearch {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.modal-export .btnSearch{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.modal-export .btnSearch:last-child{
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 @media(max-width: 767px){

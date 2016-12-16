@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :users
       resources :words
       resources :categories
+      resources :csv, only: [:index, :create]
     end
     get "/help", to: "static_pages#help"
     get "/about", to: "static_pages#about"

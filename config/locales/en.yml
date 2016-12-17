@@ -183,6 +183,8 @@ en:
     layouts:
       left_panel:
         header: "Dashboard"
+        import: "Import selected file"
+        import_file: "Import file"
     categories:
       new:
         success: "New category added successfully"
@@ -205,20 +207,17 @@ en:
       delete:
         success: "Delete category successfull!"
         danger: "Fail to delete category!"
-  categories:
-    index:
-      title: "Lesson"
-    category:
-      start: "Start"
       show:
         title: "Words list"
         add_submit: "Add"
-        add: "Add a new word"
+        add: "New word"
         add_header: "Add a new word for category: "
         add_close: "Close"
         content: "Content"
         header: "Words list for"
         legend_word: "New word content"
+        export_file: "Export CSV"
+        import_panel: "Import words from file"
     words:
       word:
         delete_confirmation: "Delete word %{name}?"
@@ -237,6 +236,20 @@ en:
       answer_content: "Answer content"
       is_correct: "Is a correct answer? "
       remove: "Remove"
+  categories:
+    index:
+      title: "Lesson"
+    category:
+      start: "Start"
+      show:
+        title: "Words list"
+        add_submit: "Add"
+        add: "Add a new word"
+        add_header: "Add a new word for category: "
+        add_close: "Close"
+        content: "Content"
+        header: "Words list for"
+        legend_word: "New word content"
   user:
     admin: "Admin"
   lessons:

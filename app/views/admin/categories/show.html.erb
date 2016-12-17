@@ -9,8 +9,20 @@
       <% end %>
     </div>
     <div class="col-md-3 form-group">
-      <button type="button" class="form-control btn-success btnSearch" id="btnAdd"
-        data-toggle="modal" data-target="#new-word-modal"><%= t ".add" %></button>
+      <div class="row">
+        <div class="col-md-6 modal-button">
+          <button type="button" class="form-control btn-danger btnSearch" id="btnAdd"
+            data-toggle="modal" data-target="#new-word-modal"><%= t ".add" %>
+          </button>
+        </div>
+        <div class="col-md-6 modal-button modal-export">
+          <a href="<%= admin_csv_index_path(format: "csv") %>">
+            <button type="button" class="btn btn-warning btnSearchZ">
+              <i class="fa fa-download "></i> <%= t "admin.categories.show.export_file" %>
+            </button>
+          </a>
+        </div>
+      </div>
       <div id="new-word-modal" class="modal fade" role="form">
         <div class="modal-dialog">
           <div class="modal-content">

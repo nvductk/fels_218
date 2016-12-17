@@ -173,6 +173,8 @@ vn:
     layouts:
       left_panel:
         header: "Dashboard"
+        import: "Import selected file"
+        import_file: "Import file"
     categories:
       new:
         success: "Thêm mới danh mục thành công"

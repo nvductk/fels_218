@@ -22,5 +22,6 @@ Rails.application.routes.draw do
     resources :relationships, only: [:create, :destroy]
     resources :categories, only: :index
     resources :lessons
+    resources :activities
   end
 end

@@ -43,6 +43,10 @@ en:
   duplicated: " duplicated"
   answer_not_less_2: "Answers cannot less than 2"
   only_4: "A word has only 4 answers"
+  unfollow: "unfollow"
+  follow: "follow"
+  start_lesson: "start lesson"
+  finish_lesson: "finish lesson"
   models:
     word:
       error_many_answers: "Cannot have more than one correct answer"
@@ -86,6 +90,12 @@ en:
       edit : "Edit"
     show_lesson_results:
       result: "Result"
+      header_feed: "Feed"
+      ago: "ago"
+      follow: " follow "
+      unfollow: " unfollow "
+      start_lesson: " start lesson "
+      finish_lesson: " finish lesson "
     account_activation:
       activated: "Account activated"
       activation_failed: "Account activated failed"
@@ -289,3 +299,7 @@ en:
       complete: "Complete"
       not_complete: "Incomplete"
       result: "Result"
+  activities:
+    index:
+      activity: "Activity"
+      ago: "ago"

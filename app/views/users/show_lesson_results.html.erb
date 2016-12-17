@@ -1,5 +1,5 @@
 <%= render template: "users/show" %>
-<div class="col-md-9">
+<div class="col-md-6">
   <div class="panel panel-default sidebar-menu">
     <table id="users-data-table" class="table table-hover table-bordered">
       <thead>
@@ -28,10 +28,26 @@
         </th>
       </tr>
       </thead>
-      <tbody id="result_search">
+      <tbody id="result">
         <%= render @lessons %>
       </tbody>
     </table>
   </div>
-  <%= will_paginate @lessons, class: "paginate"%>
+  <%= will_paginate @lessons, param_name: :lesson_page %>
+</div>
+<div class="col-md-3">
+  <div class="panel panel-default sidebar-menu">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        <span><%= t".header_feed" %></span>
+      </h3>
+    </div>
+    <ul class="list-group">
+      <% @activities.each do |activity| %>
+      <li><i class="fa fa-plus-circle"></i> <%= show_activities activity %></li>
+      <% end %>
+    </ul>
+     <%= will_paginate @activities, param_name: :activity_page %>
+  </div>
+
 </div>

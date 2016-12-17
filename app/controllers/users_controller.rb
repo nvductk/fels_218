@@ -4,7 +4,9 @@ class UsersController < ApplicationController
 
   def show
     @lessons = @user.lessons.order_by_creation_time
-      .paginate page: params[:page], per_page: Settings.page
+      .paginate page: params[:lesson_page], per_page: Settings.page
+    @activities = Activity.order_by_creation_time
+      .paginate page: params[:activity_page], per_page: Settings.page
     render :show_lesson_results
   end
 

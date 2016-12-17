@@ -45,4 +45,29 @@ module ApplicationHelper
     content_tag :a, name,
       html_options.merge(href: href, onclick: onclick)
   end
+
+  def show_activities activity
+      case activity.action_type
+      when "follow"
+        user = User.find_by id: activity.target_id
+        unless user.nil?
+          activity.user.name.to_s + t(".follow") + user.name
+        end
+      when "unfollow"
+        user = User.find_by id: activity.target_id
+        unless user.nil?
+          activity.user.name + t(".unfollow") + user.name
+        end
+      when "start_lesson"
+        lesson = Lesson.find_by id: activity.target_id
+        unless lesson.nil?
+          activity.user.name + t(".start_lesson") + lesson.category.name
+        end
+      when "finish_lesson"
+        lesson = Lesson.find_by id: activity.target_id
+        unless lesson.nil?
+          activity.user.name  + t(".finish_lesson") + lesson.category.name
+        end
+      end
+  end
 end

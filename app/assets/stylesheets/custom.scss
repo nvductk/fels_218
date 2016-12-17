@@ -302,6 +302,16 @@ footer{
 
 .btn.start-me {margin: 0 auto; width: 15%; height: 50px; line-height: 35px;}
 
+.list-group {
+  list-style-type: none;
+  padding-left: 15px;
+  li{
+    margin-bottom: 10px;
+  }
+  li:first-child{
+    margin-top: 10px;
+  }
+}
 @media(max-width: 767px){
   #menu{
     #logo{

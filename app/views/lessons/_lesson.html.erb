@@ -1,5 +1,7 @@
 <tr class="text-center">
-  <td></td>
+ <td><%= index_for lesson_counter, @lessons.current_page,
+    Settings.admin_page %>
+  </td>
   <td><%= lesson.id %></td>
   <td><%= lesson.category.name %></td>
   <% if current_user == @user %>

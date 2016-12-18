@@ -2,6 +2,22 @@ class Word < ApplicationRecord
   belongs_to :category
   has_many :answers, dependent: :destroy, inverse_of: :word
   has_many :results, dependent: :destroy
+  scope :all_words, -> user_id, search {where "content LIKE ?", "%#{search}%"}
+  scope :learnt_words, -> user_id, search {where LEARNT_QUERY, user_id: user_id,
+    search: "%#{search}%"}
+  scope :not_yet_learnt, -> user_id, search {where NOT_YET_QUERY, user_id: user_id,
+    search: "%#{search}%"}
+  scope :in_category, -> category_id do
+    where category_id: category_id if category_id.present?
+  end
+
+  LEARNT_QUERY = "content like :search and id in (select word_id
+    FROM results as r INNER JOIN lessons as l
+    ON r.lesson_id = l.id WHERE l.user_id = :user_id)"
+
+  NOT_YET_QUERY = "content like :search and id not in (select word_id
+    FROM results as r INNER JOIN lessons as l
+    ON r.lesson_id = l.id WHERE l.user_id = :user_id)"
 
   validates :content, presence: true, length: {maximum: 50},
     uniqueness: {case_sensitive: false}
@@ -28,6 +44,10 @@ class Word < ApplicationRecord
         row.delete :answers
         Word.create! row
       end
+    end
+
+    def list_word
+      self.order(created_at: :ASC).includes :category
     end
   end
 

@@ -60,6 +60,11 @@ en:
     about:
       title: "About"
       content: "This is the static about page of Framgia E-learning System"
+  words:
+    index:
+      all_words: "All words"
+      category: "Category"
+      all: "All category"
   users:
     new:
       create_my_account: "Create my account"

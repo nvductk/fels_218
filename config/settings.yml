@@ -4,3 +4,8 @@ avatar_large_size: 150
 page: 5
 admin_page: 5
 words: 5
+word:
+  filters:
+    - all_words
+    - learnt_words
+    - not_yet_learnt

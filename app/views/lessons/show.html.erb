@@ -6,7 +6,7 @@
     <%= @lesson.number_correct_answer.to_s + " / " + @lesson.results.size.to_s %>
   </span>
 </div>
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 col-md-offset-1" id="lesson_edit">
   <div class="box">
     <h2 class="text-center"><%= @lesson.category.name %></h2>
     <hr>
@@ -21,7 +21,7 @@
           <div class="col-md-12 answers">
             <% f_result.object.word.answers.each do |answer| %>
               <div class="option">
-                <%= f_result.radio_button :answer_id, answer.id ,disabled: true%>
+                <%= f_result.radio_button :answer_id, answer.id ,disabled: true %>
                 <%= answer.content %>
               </div>
             <% end %>

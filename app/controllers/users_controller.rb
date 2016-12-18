@@ -3,6 +3,9 @@ class UsersController < ApplicationController
   before_action :load_user, except: [:index, :new, :create]
 
   def show
+    @lessons = @user.lessons.order_by_creation_time
+      .paginate page: params[:page], per_page: Settings.page
+    render :show_lesson_results
   end
 
   def index

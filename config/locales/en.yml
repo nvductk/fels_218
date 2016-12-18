@@ -49,7 +49,7 @@ en:
   time:
     formats:
       date_format: "%m - %d - %Y"
-      date_time: "%d/%m/%Y %H:%M"
+      date_time: "%m/%d/%Y %H:%M"
   static_pages:
     home:
       title: "Home"
@@ -84,6 +84,8 @@ en:
       header_profile: "Profile"
       please_log_in: "Please log in"
       edit : "Edit"
+    show_lesson_results:
+      result: "Result"
     account_activation:
       activated: "Account activated"
       activation_failed: "Account activated failed"
@@ -274,4 +276,8 @@ en:
       exam_date: "Exam date"
       exam_result: "Exam result"
       correct_answer: "Correct answer"
-      wrong_answer: "Wrong anser"
+      wrong_answer: "Wrong answer"
+    lesson:
+      complete: "Complete"
+      not_complete: "Incomplete"
+      result: "Result"

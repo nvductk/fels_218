@@ -52,6 +52,7 @@ vn:
   time:
     formats:
       date_format: "%d - %m - %Y"
+      date_time: "%d/%m/%Y %H:%M"
   static_pages:
     home:
       title: "Trang chủ"
@@ -86,6 +87,8 @@ vn:
       header_profile: "Thông tin cá nhân"
       please_log_in: "Bạn chưa đăng nhập"
       edit : "Chỉnh sửa"
+    show_lesson_results:
+      result: "Kết quả"
     account_activation:
       activated: "Tài khoản kích hoạt thành công"
       activation_failed: "Tài khoản kích hoạt không thành công"
@@ -228,3 +231,25 @@ vn:
       remove: "Bỏ"
   user:
     admin: "Admin"
+  lessons:
+    load_fails: "Tải bài học lỗi"
+    edit:
+      save_btn: "Lưu bài làm"
+      lesson: "Chỉnh sửa bài làm"
+      btn_submit: "Kết thúc"
+    create:
+      lesson_created: "Tạo bài học thành công!"
+      lesson_fails: "Tạo bài học thất bại"
+    update:
+      lesson_finish: "Hoàn thành bài"
+    show:
+      lesson: "Bài học"
+      correct: "Đúng"
+      exam_date: "Ngày làm bài"
+      exam_result: "Kết quả bài làm"
+      correct_answer: "Câu trả lời đúng"
+      wrong_answer: "Câu trả lời sai"
+    lesson:
+      complete: "Hoàn thành"
+      not_complete: "Chưa hoàn thành"
+      result: "Kết quả"

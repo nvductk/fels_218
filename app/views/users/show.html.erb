@@ -1,5 +1,5 @@
 <% provide :title, @user.name %>
-<div class="col-md-5">
+<div class="col-md-3">
   <div class="panel panel-default sidebar-menu">
     <div class="panel-heading">
       <h3 class="panel-title">
@@ -9,7 +9,7 @@
         <% end %>
       </h3>
     </div>
-    <div class="panel-body">
+    <div class="panel-body text-center">
       <%= avatar_for @user, size: Settings.avatar_large_size %>
       <div class="user_name"><%= link_to @user.name, @user %></div>
       <div>
@@ -24,6 +24,4 @@
       <%= render "shared/stats" %>
     </div>
   </div>
-</div>
-<div class="col-md-7">
 </div>

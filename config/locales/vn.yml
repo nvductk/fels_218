@@ -62,6 +62,11 @@ vn:
     about:
       title: "Về Framgia"
       content: "Đây là trang thông tin của Framgia E-learning System"
+  words:
+    index:
+      all_words: "Tất cả từ"
+      category: "Danh mục"
+      all: "Tất cả danh mục"
   users:
     new:
       create_my_account: "Đăng ký tài khoản"

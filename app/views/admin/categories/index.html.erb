@@ -36,19 +36,36 @@
       </div>
     </div>
   </div>
-  <table id="categories-table" class="table table-hover">
-    <thead>
-      <tr>
-        <th class="text-center"><%= t "admin.users.index.number" %></th>
-        <th class="text-center"><%= t ".name" %></th>
-        <th class="text-center"><%= t ".word_count" %></th>
-        <th class="text-center"><%= t".created_at" %></th>
-        <th class="text-center"><%= t "admin.users.index.option" %></th>
+  <div class="panel panel-default">
+    <table id="categories-table" class="table table-hover table-bordered">
+      <thead>
+      <tr class="header-table">
+        <th class="text-center">
+          <i class="fa fa-hashtag"></i>
+          <%= t "admin.users.index.number" %>
+        </th>
+        <th class="text-center">
+          <i class="fa fa-list"></i>
+          <%= t ".name" %>
+        </th>
+        <th class="text-center">
+          <i class="fa fa-barcode"></i>
+          <%= t ".word_count" %>
+        </th>
+        <th class="text-center">
+          <i class="fa fa-clock-o"></i>
+          <%= t".created_at" %>
+        </th>
+        <th class="text-center">
+          <i class="fa fa-cog"></i>
+          <%= t "admin.users.index.option" %>
+        </th>
       </tr>
-    </thead>
-    <tbody id="result_search">
+      </thead>
+      <tbody id="result_search">
       <%= render @categories %>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </div>
   <%= will_paginate @categories, class: "paginate" %>
 </div>

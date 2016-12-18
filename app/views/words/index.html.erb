@@ -1,0 +1,36 @@
+<% provide :title, t(".all_words") %>
+<h1><i class="fa fa-language"></i> <%= t "words.index.all_words" %></h1>
+<div class="col-md-10 col-sm-12 col-md-offset-1">
+  <div class="row">
+    <div class="col-md-12 form-group">
+      <%= form_tag words_path, method: :get, id: "search_form",
+        class: "form-inline" do %>
+        <%= render "shared/search_form_words" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <table id="users-data-table" class="table table-hover table-bordered">
+      <thead>
+      <tr class="header-table">
+        <th class="text-center">
+          <i class="fa fa-hashtag"></i>
+          <%= t"admin.users.index.number" %>
+        </th>
+        <th class="text-center">
+          <i class="fa fa-list-alt"></i>
+          <%= t".category" %>
+        </th>
+        <th class="text-center">
+          <i class="fa fa-language"></i>
+          <%= t"admin.words.word.word_content" %>
+        </th>
+      </tr>
+      </thead>
+      <tbody id="result_search">
+      <%= render @words %>
+      </tbody>
+    </table>
+  </div>
+  <%= will_paginate @words, class: "paginate" %>
+</div>

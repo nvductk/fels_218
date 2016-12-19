@@ -25,21 +25,37 @@ User.create!(name:  "Admin",
     activated_at: Time.zone.now)
 end
 
-3.times do |n|
-  category_name = "Category-#{n+1}"
+10.times do |n|
+  category_name = "Category #{n+1}"
 
   category = Category.create name: category_name
 
-  90.times do |n|
-    word_content = "word-#{n+1}"
+  90.times do |j|
+    word_content = "word #{j+1} - category #{n+1}"
     word = Word.create content: word_content,
-      category_id: category.id
-    3.times do |n|
-      Answer.create content: "answer-#{n+1}",
-        is_correct: 0, word_id: word.id
-    end
-    Answer.create content: "answer-4",
-        is_correct: 1, word_id: word.id
+      category_id: category.id,
+      answers_attributes: {
+        0 => {
+          content: "answer 1 - word #{j+1}",
+          is_correct: 0,
+          word_id: j+1
+        },
+        1 => {
+          content: "answer 2 - word #{j+1}",
+          is_correct: 0,
+          word_id: j+1
+        },
+        2 => {
+          content: "answer 3 - word #{j+1}",
+          is_correct: 0,
+          word_id: j+1
+        },
+        3 => {
+          content: "answer 4 - word #{j+1}",
+          is_correct: 1,
+          word_id: j+1
+        }
+      }
   end
 end
 

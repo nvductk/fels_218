@@ -5,7 +5,7 @@
     <%= render "layouts/head" %>
     <%= render "layouts/shim" %>
   </head>
-  <body>
+  <body style="<%= "padding-top: 0px" if current_page? root_url %>">
   <%= render "layouts/header" %>
   <div class="container" id="main-content" style="<%= "margin: 0;padding: 0;
     width: 100%" if current_page? root_url %>">

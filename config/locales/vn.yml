@@ -53,6 +53,15 @@ vn:
     formats:
       date_format: "%d - %m - %Y"
       date_time: "%d/%m/%Y %H:%M"
+  categories:
+    index:
+      title: "Danh sách bài học"
+      name: "Tên danh mục"
+      word_count: "Tổng số từ"
+      created_at: "Tạo ngày"
+      action: "Thao tác"
+    category:
+      start: "Bắt đầu ngay"
   static_pages:
     home:
       title: "Trang chủ"
@@ -128,6 +137,7 @@ vn:
       log_out: "Đăng xuất"
       users: "Danh sách thành viên"
       account: "Tài khoản"
+      categories: "Bài học"
   password_resets:
     new:
       title: "Phục hồi mật khẩu"
@@ -147,6 +157,8 @@ vn:
         password: "Mật khẩu"
         password_confirmation: "Xác nhận mật khẩu"
         email: "Địa chỉ email"
+      category:
+        name: "Tên danh mục"
   helpers:
     label:
       session:
@@ -162,6 +174,7 @@ vn:
         join_on: "Đăng ký ngày"
         option: "Lựa chọn"
         status: "Trạng thái"
+        action: "Thao tác"
       destroy:
         success: "Xóa tài khoản thành công"
         danger: "Xóa tài khoản thất bại"
@@ -174,15 +187,23 @@ vn:
         lb_permission: "Quyền hạn"
         lb_is_admin: "Quản trị viên"
         header: "Cập nhật thông tin"
+      update:
+        update_fail: "Cập nhật thông tin tài khoản thất bại"
+        profile: "Cập nhật thông tin thành công"
     shared:
       search_form:
         holder: "Tìm kiếm"
         btn_submit: "Tìm kiếm"
     layouts:
       left_panel:
-        header: "Dashboard"
-        import: "Import selected file"
-        import_file: "Import file"
+        header: "Quản lý"
+        import: "Tải lên file đã chọn"
+        import_file: "Tải lên"
+        categories: "Danh mục"
+        users: "Tài khoản"
+        add_close: "Đóng"
+      header:
+        log_out: "Đăng xuất"
     categories:
       new:
         success: "Thêm mới danh mục thành công"
@@ -193,15 +214,15 @@ vn:
         created_at: "Ngày tạo"
         word_count: "Tổng số từ"
         lesson_count: "Tổng số bài học"
-        add: "Add category"
+        add: "Thêm danh mục"
         add_header: "Thêm mới danh mục"
         add_submit: "Thêm mới"
         add_close: "Đóng"
         edit_header: "Cập nhật danh mục "
         edit_submit: "Cập nhật"
       update:
-        success: "Thêm mới danh mục thành công!"
-        danger: "Thêm mới danh mục thất bại!"
+        success: "Chỉnh sửa danh mục thành công!"
+        danger: "Chỉnh sửa danh mục thất bại!"
       show:
         title: "Danh sách từ"
         add_submit: "Thêm mới"
@@ -211,6 +232,8 @@ vn:
         content: "Nội dung"
         header: "Danh sách từ thuộc danh mục"
         legend_word: "Nội dung từ mới"
+        import_panel: "Tải lên dữ liệu từ từ file"
+        export_file: "Tải xuống"
     words:
       word:
         delete_confirmation: "Bạn có muốn xóa từ %{name}?"
@@ -230,7 +253,7 @@ vn:
       is_correct: "Đáp án này là câu trả lời đúng? "
       remove: "Bỏ"
   user:
-    admin: "Admin"
+    admin: "Trang quản lý"
   lessons:
     load_fails: "Tải bài học lỗi"
     edit:

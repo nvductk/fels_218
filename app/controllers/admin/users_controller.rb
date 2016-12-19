@@ -12,6 +12,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def update
+    @user.skip_verify_current_password = true
     if @user.update_attributes user_params
       flash[:success] = t".profile"
       redirect_to admin_root_url

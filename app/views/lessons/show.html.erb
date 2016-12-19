@@ -21,7 +21,8 @@
           <div class="col-md-12 answers">
             <% f_result.object.word.answers.each do |answer| %>
               <div class="option">
-                <%= f_result.radio_button :answer_id, answer.id ,disabled: true %>
+                <%= f_result.radio_button :answer_id, answer.id, disabled: true,
+                  class: "rdo_lesson" %>
                 <%= answer.content %>
               </div>
             <% end %>

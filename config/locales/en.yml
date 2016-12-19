@@ -135,7 +135,7 @@ en:
       log_out: "Log out"
       users: " Users"
       account: "Account"
-      categories: "Categories"
+      categories: "Lessons"
   password_resets:
     new:
       title: "Password recovery"
@@ -155,6 +155,8 @@ en:
         password: "Password"
         password_confirmation: "Password confirmation"
         email: "Your Email Address"
+      category:
+        name: "Category name"
   helpers:
     label:
       session:
@@ -183,6 +185,9 @@ en:
         lb_permission: "Permission"
         lb_is_admin: "Administrator"
         header: "Update"
+      update:
+        update_fail: "Fail to update user information"
+        profile: "Cập nhật thông tin thành công"
     shared:
       search_form:
         holder: "Search"
@@ -192,6 +197,9 @@ en:
         header: "Dashboard"
         import: "Import selected file"
         import_file: "Import file"
+        categories: "Categories"
+      header:
+        log_out: "Log out"
     categories:
       new:
         success: "New category added successfully"
@@ -247,7 +255,7 @@ en:
     index:
       title: "Lesson"
     category:
-      start: "Start"
+      start: "Start now"
       show:
         title: "Words list"
         add_submit: "Add"
